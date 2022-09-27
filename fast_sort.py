@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# pyhton 实现快速排序
+
 def data_sort(alist,first,last):
     # 递归的终结条件
     if first >= last:
@@ -34,7 +36,7 @@ def data_sort(alist,first,last):
 
 if __name__ == '__main__':
     alist = [56, 48, 89, 12, 34, 6, 7, 79, 61]
-    print alist
+    print(alist)
     n = len(alist)
     data_sort(alist,0,n-1)
-    print alist
+    print(alist)

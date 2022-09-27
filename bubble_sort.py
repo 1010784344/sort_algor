@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# python 冒泡排序
+
+
 def data_sort(alist):
     n = len(alist)
     # 由图可知，每循环一轮，安排一个最大数，最后一次就只剩一个数字不用循环就最大，
@@ -12,6 +15,6 @@ def data_sort(alist):
 
 if __name__ == '__main__':
     alist = [56,48,89,12,34,6,7,79,61]
-    print alist
+    print(alist)
     data_sort(alist)
-    print alist
+    print(alist)

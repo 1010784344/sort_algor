@@ -17,6 +17,6 @@ def data_sort(alist):
 
 if __name__ == '__main__':
     alist = [56, 48, 89, 12, 34, 6, 7, 79, 61]
-    print alist
+    print(alist)
     data_sort(alist)
-    print alist
+    print(alist)

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# python 二叉树老版
+
 
 # 需要往二叉树上添加的节点
 class Node(object):
@@ -46,7 +48,7 @@ class Tree(object):
         queue = [self.root]
         while queue:
             cur_node = queue.pop(0)
-            print cur_node.item,
+            print(cur_node.item)
 
             if cur_node.lchild:
                 queue.append(cur_node.lchild)
@@ -58,7 +60,7 @@ class Tree(object):
         """先序遍历 传入的是根节点"""
         if not node:
             return
-        print node.item,
+        print(node.item)
         self.pre_order(node.lchild)
         self.pre_order(node.rchild)
 
@@ -68,7 +70,7 @@ class Tree(object):
             return
 
         self.mid_order(node.lchild)
-        print node.item,
+        print (node.item)
         self.mid_order(node.rchild)
 
     def last_order(self, node):
@@ -78,7 +80,7 @@ class Tree(object):
 
         self.last_order(node.lchild)
         self.last_order(node.rchild)
-        print node.item,
+        print(node.item)
 
 
 if __name__ == '__main__':
@@ -94,9 +96,9 @@ if __name__ == '__main__':
     tree.add(8)
     tree.add(9)
     tree.breath_travel()
-    print ''
+    print('')
     tree.pre_order(tree.root)
-    print ''
+    print('')
     tree.mid_order(tree.root)
-    print ''
+    print ('')
     tree.last_order(tree.root)

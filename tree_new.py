@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-
+# python 二叉树新版
 
 class Node(object):
 

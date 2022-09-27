@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# python 实现选择排序
+
+
 def data_sort(alist):
     n = len(alist)
     # n个数字，共要进行n-1轮，因为当只剩下最后一个数字的时候就自然而然的就是最大的，不用比对
@@ -11,8 +14,9 @@ def data_sort(alist):
                 min = i
         alist[j],alist[min] = alist[min],alist[j]
 
+
 if __name__ == '__main__':
     alist = [56,48,89,12,34,6,7,79,61]
-    print alist
+    print(alist)
     data_sort(alist)
-    print alist
+    print(alist)

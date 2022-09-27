@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# python 二分法查找
+
+
 def data_search(alist, item):
     n = len(alist)
     # 跟快速排序还是不一样的，快速排序同样是分成几个片段递归来处理，但他同时保持着原来的相对顺序
@@ -14,6 +17,7 @@ def data_search(alist, item):
         elif item == alist[mid]:
             return True
     return False
+
 
 def data_search2(alist, item):
     # 非递归版本，与递归版本最明显的区别就是，没有创建新的列表，改变的是2个游标的值
@@ -33,11 +37,8 @@ def data_search2(alist, item):
     return False
 
 
-
-
-
 if __name__ == '__main__':
     alist = [6, 7, 12, 34, 48, 56, 61, 79, 89]
-    print data_search(alist, 79)
+    print(data_search(alist, 79))
 
-    print data_search2(alist, 79)
+    print(data_search2(alist, 79))
