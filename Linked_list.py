@@ -1,4 +1,22 @@
 # python 实现链表
+'''需要注意的点是：
+
+（1）有一个没啥意义的head 节点，只是用来记录链表的起始位置
+
+（2）链表的遍历的起始位置都是：cur=self.head
+
+（3）链表遍历的方式是 list = list.next
+
+（4）remove 和 insert 方法都有使用了两个变量小技巧
+    remove:
+    pre.next = cur.next
+
+    insert:
+    tmp = cur.next
+    cur.next=node
+    node.next = tmp'''
+
+
 
 
 # 定义节点类
