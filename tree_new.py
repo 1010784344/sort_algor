@@ -16,7 +16,7 @@ class BinTree(object):
     def add_node(self, val):
 
         node_list = [self.root]
-        # 真正全局使用的变量不是 node_list 这个列表，而是 self.root
+        # 真正理解 node_list 这个列表的作用，这个列表是为了模拟，前面每弹出一个父节点，后面就进入它的左节点和右节点
         # append 并没有追加到 node_list 这个列表，而是 self.root 后面的节点上
         # nodelist 根据动态图理解的时候是[1,2,3,4] 这样的，但真正用代码实现的时候
         # 看到代码里的数据结构不是 [1,2,3,4] 这样的，而是一个树状的结构
@@ -71,14 +71,34 @@ class BinTree(object):
         self.first_for(node.left)
         self.first_for(node.right)
 
-    # 深度优先遍历之中序遍历
+    # 深度优先遍历之中序遍历返回一个个值
     # 先打印出根的值，然后一直往左递归到底，左边的节点为空之后，再然后一直往右递归到底，右边的节点为空
-    def mid_for(self, node):
-        if not node:
+    def mid_for_val(self, Node):
+        if not Node:
             return
-        self.mid_for(node.left)
-        print(node.val)
-        self.mid_for(node.right)
+        self.mid_for_val(Node.left)
+        print(Node.val)
+        self.mid_for_val(Node.right)
+
+    # 中序返回列表方式一
+    def mid_for_list1(self, Node):
+        if not Node:
+            return []
+        return self.mid_for_list1(Node.left)+[Node.val]+self.mid_for_list1(Node.right)
+
+    # 中序返回列表方式二
+    def mid_for_list2(self, Node):
+        def test(cur):
+            if not cur:
+                return
+            test(cur.left)
+            tmp.append(cur.val)
+            test(cur.right)
+
+        tmp = []
+        test(Node)
+        return tmp
+
 
     # 深度优先遍历之后序遍历
     def last_for(self, node):
@@ -102,11 +122,12 @@ if __name__ == '__main__':
     bb.add_node(8)
     bb.add_node(9)
     bb.add_node(10)
+    # 广度优先遍历
     bb.board()
     print('\n')
     bb.first_for(bb.root)
     print('\n')
-    bb.mid_for(bb.root)
+    print(bb.mid_for_list1(bb.root))
     print('\n')
     bb.last_for(bb.root)
 
